@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
 using ContosoPizza.Models;
 using ContosoPizza.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoPizza.Controllers
 {
@@ -10,14 +9,12 @@ namespace ContosoPizza.Controllers
     [Route("[controller]")]
     public class PizzaController : ControllerBase
     {
-        public PizzaController()
-        {
-        }
-
         // GET all action
         [HttpGet]
-        public ActionResult<List<Pizza>> GetAll() =>
-            PizzaService.GetAll();
+        public ActionResult<List<Pizza>> GetAll()
+        {
+            return PizzaService.GetAll();
+        }
 
         // GET by Id action
         [HttpGet("{id}")]
